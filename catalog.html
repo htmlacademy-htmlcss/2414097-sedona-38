@@ -3,6 +3,7 @@
 
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каталог</title>
     <link rel="stylesheet" href="styles/styles.css">
   </head>
@@ -15,7 +16,7 @@
             <img src="images/svg/logo.svg" alt="Логотип сайта города Седона">
           </a>
 
-          <ul class="navigation-list">
+          <ul class="navigation-list list-reset">
             <li class="navigation-item">
               <a class="navigation-link" href="index.html">Главная</a>
             </li>
@@ -27,7 +28,7 @@
             </li>
           </ul>
 
-          <ul class="user-list">
+          <ul class="user-list list-reset">
             <li class="user-item">
               <a class="user-link user-link-search" href="#">
                 <span class="visually-hidden">Поиск</span>
@@ -47,7 +48,7 @@
       <main class="main main-catalog" data-test="main">
         <header class="filter-header">
           <h1 class="filter-main-title">Гостиницы Седоны</h1>
-          <ul class="breadcrumbs">
+          <ul class="breadcrumbs list-reset">
             <li class="breadcrumbs-item">
               <a class="breadcrumbs-link breadcrumbs-link-home" href="index.html">
                 <span class="visually-hidden">Главная</span>
@@ -65,7 +66,7 @@
           <form class="filter-form" action="https://echo.htmlacademy.ru/" method="get">
             <fieldset class="filter-group filter-group-check">
               <legend class="filter-title">Инфраструктура:</legend>
-              <ul class="filter-list control-list">
+              <ul class="filter-list control-list list-reset">
                 <li class="control-item">
                   <label class="control-label" for="pool">
                     <input class="control-input" type="checkbox" id="pool" name="pool" checked>
@@ -89,7 +90,7 @@
 
             <fieldset class="filter-group filter-group-radio">
               <legend class="filter-title">Тип жилья:</legend>
-              <ul class="filter-list control-list">
+              <ul class="filter-list control-list list-reset">
                 <li class="control-item">
                   <label class="control-label" for="hotel">
                     <input class="control-input" id="hotel" type="radio" name="product-group" value="hotel" checked>
@@ -154,7 +155,7 @@
               <option value="expensive">Сначала дорогое</option>
             </select>
 
-            <ul class="catalog-view view">
+            <ul class="catalog-view view list-reset">
               <li class="view-item">
                 <a class="view-link view-link-tile view-link-active" href="#">
                   <span class="visually-hidden">Вид плитками</span>
@@ -174,7 +175,7 @@
           </div>
 
           <div class="catalog-product">
-            <ul class="product-list">
+            <ul class="product-list list-reset">
               <li class="product-item">
                 <a class="product-card-link" href="#">
                   <img src="images/hotel-1.jpg" width="300" height="212" alt="Звездное небо в расщелине гор.">
@@ -237,7 +238,7 @@
             </ul>
           </div>
           <div class="catalog-pagination">
-            <ul class="pagination>">
+            <ul class="pagination list-reset">
               <li class="pagination-item">
                 <a class="pagination-link pagination-link-current" href="#" aria-current="page">1</a>
               </li>
@@ -273,8 +274,8 @@
         </section>
       </main>
 
-      <footer class="page-footer" data-test="footer">
-        <ul class="footer-social social">
+      <footer class="footer" data-test="footer">
+        <ul class="footer-social social list-reset">
           <li class="social-item">
             <a class="social-link" href="https://vk.com/htmlacademy">
               <span class="visually-hidden">ВКонтакте</span>
