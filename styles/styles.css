@@ -210,6 +210,7 @@ img {
 
 .user-list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
   align-items: center;
   max-width: 140px;
@@ -241,7 +242,7 @@ img {
   background-image: url("../images/svg/heart.svg");
 }
 
-/*не понимаю почему не делается круг*/
+/*не понимаю почему не меняет расположение справа*/
 .user-favorites-num {
   display: block;
   width: 20px;
@@ -273,7 +274,7 @@ img {
   text-align: center;
   color: #ffffff;
 
-  background-color: #343e47;
+  background-color: #534f50;
   background-image: url("../images/svg/vector-hero.svg"), url("../images/index-background.jpg");
   background-repeat: no-repeat;
   background-position: bottom center;
@@ -313,7 +314,7 @@ img {
 }
 
 .advantages-item:not(.advantages-item-full):nth-child(2n) {
-  background-color: rgba(131, 179, 211, 0.2);
+  background-color: rgba(131, 179, 211, 0.12);
 }
 
 .advantages-item-full {
@@ -448,10 +449,13 @@ img {
   line-height: 36px;
 }
 
-.subscribe-home {
+.subscribe {
   padding: 96px 70px 104px;
 
   text-align: center;
+}
+
+.subscribe-home {
   color: #ffffff;
 
   background-color: #828c96;
@@ -543,6 +547,8 @@ img {
 }
 
 .filter {
+  padding: 35px 70px 70px;
+
   color: #ffffff;
 
   background-color: #755651;
@@ -553,10 +559,21 @@ img {
 
 .filter-main-title {
   margin: 0;
+  margin-bottom: 8px;
 
   font-size: 60px;
   line-height: 78px;
   color: #ffffff;
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 40px;
+
+  gap: 27px;
+
 }
 
 .breadcrumbs-link {
@@ -571,20 +588,195 @@ img {
   width: 13px;
   height: 13px;
 
-  background-image: url();
+  background-image: url("../images/svg/breadcrumbs.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 12px;
+  background-size: cover;
+}
+
+.breadcrumbs-item {
+  position: relative;
+}
+
+.advantages-item::not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -18px;
+
+  width: 7px;
+  height: 10px;
+
+  background-image: url("../images/svg/breadcrumbs-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translateY(-50%);
+}
+
+.filter-form {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 70px;
+}
+
+.filter-group {
+  margin: 0;
+  padding: 0;
+
+  border: none;
 }
 
 .filter-title {
+  display: block;
+  margin-bottom: 32px;
+  padding: 0;
+
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
+  white-space: normal;
+}
+
+.control-list {
+  display: grid;
+
+  gap: 16px;
+}
+
+.control-input {
+  position: relative;
+
+  width: 20px;
+  height: 20px;
+  margin: 0;
+
+  background-color: #ffffff;
+  border: none;
+  border-radius: 4px;
+
+  appearance: none;
 }
 
 .control-text {
+  padding-left: 16px;
+}
+
+/* переписал код по чекбоксам, но он не работает у меня*/
+.control-input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: none;
+  width: 20px;
+  height: 19px;
+
+  background-image: url("../images/svg/tick-checkbox.svg");
+  transform: translate(-50%, -50%);
+}
+
+.control-input[type="radio"] {
+  border-radius: 50%;
+}
+
+.control-input[type="radio"]::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: none;
+  width: 10px;
+  height: 10px;
+
+  background-color: #3f5e72;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.control-input::checked::before {
+  display: block;
+}
+
+.control-label {
+  display: grid;
+  align-items: start;
+  width: fit-content;
+
   line-height: 23px;
+
+  grid-template-columns: repeat(2, auto);
+}
+
+.filter-group-range {
+  margin-left: auto;
+}
+
+.range-input-container {
+  display: grid;
+  width: 288px;
+  margin-bottom: 36px;
+
+  column-gap: 2px;
+
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.range-input-min {
+  border-radius: 4px 0 0 4px;
+}
+
+.range-input-max {
+  border-radius: 0 4px 4px 0;
+}
+
+.filter-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 191px;
+
+  gap: 32px;
+}
+
+.catalog {
+  padding: 50px 70px 60px;
+}
+
+.catalog-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.catalog-title {
+  margin-right: auto;
+}
+
+.catalog-select {
+  display: flex;
+  width: 292px;
+  margin-right: 70px;
+  padding: 14px 20px;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #333333;
+
+  border: 2px solid #e5e5e5;
+  border-radius: 4px;
+}
+
+.view {
+  display: grid;
+
+  gap: 8px;
+  grid-template-columns: repeat(3, 1fr);
+
 }
 
 .view-link {
@@ -614,9 +806,35 @@ img {
   background-image: url("../images/svg/view-list.svg");
 }
 
+.product-list {
+  display: grid;
+
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.product-item {
+  display: grid;
+  padding: 20px;
+
+  border: 1px solid #e6e6e6;
+
+  gap: 16px 20px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .product-card-link {
   color: #000000;
   text-decoration: none;
+
+  grid-column: 1 / -1;
+}
+
+.product-card-link img {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .product-card-title {
@@ -627,7 +845,14 @@ img {
   line-height: 28px;
 }
 
+.product-text-price {
+  text-align: right;
+}
+
 .product-rating-text {
+  margin: 0;
+  padding: 9px;
+
   font-size: 16px;
   line-height: 20px;
   text-align: center;
@@ -640,6 +865,7 @@ img {
 .product-rating-star {
   display: block;
   height: 37px;
+  margin: 0;
 
   background-image: url("../images/svg/stars.svg");
   background-repeat: no-repeat;
@@ -654,7 +880,29 @@ img {
   width: 70px;
 }
 
+.product-rating-star-2 {
+  width: 40px;
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 40px 0 0;
+  padding-top: 40px;
+
+  border-top: 1px solid #e6e6e6;
+
+  gap: 8px;
+}
+
 .pagination-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 60px;
+  min-height: 60px;
+  padding: 10px;
+
   font-weight: 700;
   font-size: 20px;
   line-height: 36px;
@@ -663,6 +911,7 @@ img {
   text-decoration: none;
 
   background-color: #82b3d3;
+  background-size: cover;
   border: 1px solid #82b3d3;
   border-radius: 4px;
 }
@@ -677,6 +926,7 @@ img {
 }
 
 .pagination-link-more {
+  font-weight: 400;
   font-size: 22px;
   line-height: 26px;
   color: #000000;
