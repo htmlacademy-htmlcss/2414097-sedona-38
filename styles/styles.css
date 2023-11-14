@@ -331,31 +331,24 @@ img {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  /*justify-content: flex-start;*/
   max-width: 150px;
   margin-right: 20px;
 }
 
 .user-link {
-  display: block;
-  width: 44px;
-  min-height: 64px;
+  position: relative;
 
-  text-align: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 44px;
+  min-height: 64px;
+  padding: 10px;
+
   color: #000000;
   text-decoration: none;
 
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 18px 18px;
-}
-
-.user-link-search {
-  background-image: url("../images/svg/search.svg");
-}
-
-.user-link-favorites {
-  background-image: url("../images/svg/heart.svg");
+  fill: currentColor;
 }
 
 .user-link:hover,
@@ -370,11 +363,14 @@ img {
 }
 
 .user-favorites-num {
-  display: inline-block;
+  position: absolute;
+  top: 18%;
+  right: 9%;
+
   min-width: 20px;
+  max-width: 6ch;
   min-height: 20px;
-  margin: 25% 5px 5px;
-  padding: 5px 2px;
+  padding: 5px 4px;
 
   font-size: 10px;
   line-height: 10px;
